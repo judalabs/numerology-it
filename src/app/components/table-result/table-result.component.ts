@@ -9,7 +9,7 @@ import { Analysis } from '../../models/analysis';
   templateUrl: './table-result.component.html',
   styleUrls: ['./table-result.component.scss']
 })
-export class tableResultComponent implements OnInit {
+export class TableResultComponent implements OnInit {
   people: Person[] = [];
   analysisList: Analysis[] = [];
   initPerson = {
