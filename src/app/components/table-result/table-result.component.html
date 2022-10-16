@@ -1,7 +1,7 @@
 <div class="card-container">
     <div style="margin-right: 100px;">
-        <input type="text" class="form-control" required minlength="1" #name="ngModel" [(ngModel)]="personEdit.name"
-            placeholder="Full Name">
+        <input type="text" class="form-control" required minlength="1" #name="ngModel" 
+        [(ngModel)]="personEdit.name" placeholder="Full Name">
         <input type="text" class="form-control" required minlength="10" #birthdate="ngModel"
             [(ngModel)]="personEdit.birthDate" placeholder="Birth Date">
 
@@ -16,7 +16,7 @@
         </thead>
         <tr *ngFor="let analysis of analysisList; index as i;">
             <td>{{analysis.name}}</td>
-            <td *ngFor="let person of people">{{person.results[i].resultNumber}}</td>
+            <td *ngFor="let person of people" [attr.data-tooltip]="person.name" >{{person.results[i].resultNumber}}</td>
         </tr>
     </table>
 </div>

@@ -5,10 +5,42 @@ input {
     height: 25px;
     width: 200px;
 }
+
 td {
     border: 1px solid;
     text-align: center;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 14px;
     word-break: normal;
+}
+
+[data-tooltip] {
+    position: relative;
+    cursor: default;
+}
+
+[data-tooltip]::after {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s, transform 0.2s;
+    
+    position: absolute;
+    width: 600px;
+    left: calc(50% - 300px);
+    box-sizing: border-box;
+    text-align: center;
+
+    color: black;
+    background: gray;
+    content: attr(data-tooltip);
+    padding: 8px;
+    border-radius: 10px;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
 }
