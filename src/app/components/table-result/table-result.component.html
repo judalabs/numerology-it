@@ -1,24 +1,22 @@
 <div class="card-container">
     <div style="margin-right: 100px;">
-        <input type="text" 
-        class="form-control" required minlength="1" #name="ngModel" 
-        [(ngModel)]="personEdit.name" placeholder="Full Name">
-        <input type="text" 
-        class="form-control" required minlength="10" #birthdate="ngModel" 
-        [(ngModel)]="personEdit.birthDate" placeholder="Birth Date">
-        
+        <input type="text" class="form-control" required minlength="1" #name="ngModel" [(ngModel)]="personEdit.name"
+            placeholder="Full Name">
+        <input type="text" class="form-control" required minlength="10" #birthdate="ngModel"
+            [(ngModel)]="personEdit.birthDate" placeholder="Birth Date">
+
         <button [disabled]="name.invalid || birthdate.invalid" (click)="addThisPerson()">Add</button>
     </div>
     <table *ngIf="people.length">
         <thead>
             <tr>
                 <th>Name</th>
-                <th *ngFor="let analysis of analysisList">{{analysis.name}}</th>
+                <th *ngFor="let person of people" style="padding: 0px 5px; max-width: 100px;">{{person.name}}</th>
             </tr>
         </thead>
-        <tr *ngFor="let person of people">
-            <td>{{person.name}}</td>
-            <td *ngFor="let result of person.results">{{result.resultNumber}}</td>
+        <tr *ngFor="let analysis of analysisList; index as i;">
+            <td>{{analysis.name}}</td>
+            <td *ngFor="let person of people">{{person.results[i].resultNumber}}</td>
         </tr>
     </table>
 </div>

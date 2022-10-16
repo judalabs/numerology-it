@@ -1,4 +1,4 @@
 export interface Analysis {
-    name: string;
-    description: string;
+    name: String;
+    description: String;
 }

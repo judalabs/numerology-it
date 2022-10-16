@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Person, defaultPerson } from 'src/app/models/person';
 import { AnalysisService } from 'src/app/services/analysis.service';
-import { ResultService } from 'src/app/services/result.service';
 import { Analysis } from '../../models/analysis';
 
 @Component({
@@ -19,8 +18,7 @@ export class TableResultComponent implements OnInit {
   personEdit: Person = defaultPerson(this.initPerson);
 
   constructor(
-    private analysisService: AnalysisService,
-    private resultService: ResultService) { }
+    private analysisService: AnalysisService) { }
 
   ngOnInit(): void {
     this.analysisService.getAll().subscribe({
@@ -32,9 +30,8 @@ export class TableResultComponent implements OnInit {
 
   addThisPerson(): void {
     var actualPerson = this.personEdit;
-    this.resultService.calculateIt(actualPerson).subscribe({
+    this.analysisService.calcIt(actualPerson).subscribe({
       next: (results) => {
-        console.log(results);
         actualPerson.results = results;
       }
     });
