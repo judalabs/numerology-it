@@ -6,6 +6,10 @@ import { Result } from '../models/results';
 import { BaseMath } from './numerology/BaseMath';
 import { PsychicNumber } from './numerology/PsychicNumber';
 import { PersonalYear } from './numerology/PersonalYear';
+import { Impression } from './numerology/Impression';
+import { Pythagorean } from './numerology/Pythagorean';
+import { Motivation } from './numerology/Motivation';
+import { Expression } from './numerology/Expression';
 
 @Injectable({
   providedIn: 'root'
@@ -15,22 +19,29 @@ export class AnalysisService {
   constructor() { }
 
   getAll(): Observable<Analysis[]> {
-    return of(this.getAndConvert(this.toHeader));
+    return of(this.getAndConvert(this.toHeader, defaultPerson(), Pythagorean.getValue));
   }
 
-  calcIt(person:Person): Observable<Result[]> {
-    return of(this.getAndConvert(this.toCalc, person));
+  calcIt(person: Person, toTableConversion: (a: string) => number): Observable<Result[]> {
+    return of(this.getAndConvert(this.toCalc, person, toTableConversion));
   }
 
-  private getAndConvert<T>(convertFunction: (a: BaseMath) => T, person: Person = defaultPerson()): T[] {
-    return this.getListOfAnalysis(person)
+  private getAndConvert<T>(
+    convertFunction: (a: BaseMath) => T,
+    person: Person = defaultPerson(),
+    toTableConversion: (a: string) => number): T[] {
+
+    return this.getListOfAnalysis(person, toTableConversion)
       .map(convertFunction);
   }
 
-  private getResultOfAnalysis(person: Person = defaultPerson()): Result[] {
-    var listOfAnalysis: BaseMath[] = this.getListOfAnalysis(person);
-    return listOfAnalysis.map(analysis => this.toCalc(analysis));
-  }
+  /* 
+    private getResultOfAnalysis(
+      person: Person = defaultPerson(), 
+      convertFunction: (a: string) => number): Result[] {
+      var listOfAnalysis: BaseMath[] = this.getListOfAnalysis(person, convertFunction);
+      return listOfAnalysis.map(analysis => this.toCalc(analysis));
+    } */
 
   private toCalc(analysis: BaseMath): Result {
     return {
@@ -39,12 +50,19 @@ export class AnalysisService {
     };
   }
 
-  private getListOfAnalysis(person: Person): BaseMath[] {
+  private getListOfAnalysis(person: Person, toTableConversion: (a: string) => number): BaseMath[] {
     var shouldPrintPartials = false;
+
+    var motivation = new Motivation(person, shouldPrintPartials, toTableConversion);
+    var impression = new Impression(person, shouldPrintPartials, toTableConversion);
+    var expressionValue: number = motivation.calcReduced() + impression.calcReduced();
+
     return [
       new PsychicNumber(person, shouldPrintPartials),
-      new PersonalYear(person, shouldPrintPartials)
-
+      new PersonalYear(person, shouldPrintPartials),
+      motivation,
+      impression,
+      new Expression(expressionValue, shouldPrintPartials, toTableConversion)
     ];
   }
 

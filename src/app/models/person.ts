@@ -8,7 +8,7 @@ export interface Person {
 
 export function defaultPerson(options?: Partial<Person>): Person {
     const defaults = {
-        name: '',
+        name: ' ',
         birthDate: '',
         results: []
     };

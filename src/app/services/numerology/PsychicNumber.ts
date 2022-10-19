@@ -2,7 +2,7 @@ import { Person } from "src/app/models/person";
 import { BaseMath } from "./BaseMath";
 
 export class PsychicNumber extends BaseMath {
-    resultNumber: number = 1;
+    resultNumber: number = 7;
 
     constructor(person: Person, printPartials: boolean) {
         super(printPartials);

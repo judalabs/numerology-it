@@ -1,11 +1,11 @@
 export abstract class BaseMath {
 
-    INIT:number = 'a'.charCodeAt(0);
+    protected static INIT:number = 'a'.charCodeAt(0);
 
     abstract resultNumber:number;
     protected input:String = '';
     protected shouldPrintPartials: boolean = false;
-    protected VOWELS:String[] = ['a', 'e', 'i', 'o', 'u'];
+    protected static VOWELS:String[] = ['a', 'e', 'i', 'o', 'u'];
     private commonMasterNumbers = [11, 22];
     private useMasterNumbers:boolean = true;
 //    private List<Integer> uncommonMasterNumbers = List.of(18, 33, 44, 55, 66, 77, 108);

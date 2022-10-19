@@ -2,7 +2,7 @@ import { Person } from "src/app/models/person";
 import { BaseMath } from "./BaseMath";
 
 export class PersonalYear extends BaseMath {
-    resultNumber: number = 10;
+    resultNumber: number = 8;
 
     constructor(person: Person, printPartials: boolean) {
         super(printPartials);
@@ -16,6 +16,6 @@ export class PersonalYear extends BaseMath {
     }
 
     public getDescription(): string {
-        return "null";
+        return "Abcdef asaseas";
     }
 }
