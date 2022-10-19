@@ -6,7 +6,16 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
-
+  
+  .deletable {
+    position: relative;
+    a {
+        position: absolute;
+        top: 0px;
+        color: red;
+        cursor: pointer;
+    }
+}
   h1,
   h2,
   h3,

@@ -30,8 +30,20 @@
 
     <button [disabled]="name.invalid || birthdate.invalid" (click)="addThisPerson()">{{addText}}</button>
 </div>
-  <app-table-result [analysisList]="analysisList" [people]="people" *ngIf="people.length>1"></app-table-result>
-  <app-single-result [analysisList]="analysisList" [person]="people[0]" *ngIf="people.length==1"></app-single-result>
+
+  <app-table-result 
+    (deleteIndex)="deletePersonAt($event)"
+    [analysisList]="analysisList" 
+    [people]="people" 
+    *ngIf="people.length>1">
+  </app-table-result>
+
+  <app-single-result 
+    (deleteIndex)="deletePersonAt($event)"
+    [analysisList]="analysisList"
+    [people]="people" 
+    *ngIf="people.length==1">
+  </app-single-result>
 
 </div>
 <router-outlet></router-outlet>

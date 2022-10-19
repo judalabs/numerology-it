@@ -1,5 +1,8 @@
-<div class="card-container" *ngFor="let result of person.results; index as i;">
-    <p>{{analysisList[i].name}}</p>
-    <p>{{analysisList[i].description}}</p>
-    <p>{{result.resultNumber}}</p>
+<div class=" deletable">
+    <a style="left: 100px;" (click)="deleteIndex.next(0)"><i class="fa fa-times" aria-hidden="true"></i></a>
+    <div class="card-container" *ngFor="let result of person.results; index as i;">
+        <p>{{analysisList[i].name}}</p>
+        <p>{{analysisList[i].description}}</p>
+        <p>{{result.resultNumber}}</p>
+    </div>
 </div>

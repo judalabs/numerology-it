@@ -50,5 +50,10 @@ export class AppComponent implements OnInit {
   updateTextMessage() {
     this.addText = this.people.length ? 'Add to compare' : 'Add';
   }
+
+  deletePersonAt(personIndex:number) {
+    this.people.splice(personIndex, 1);
+    this.updateTextMessage();
+  }
 }
 
