@@ -10,6 +10,8 @@ import { Impression } from './numerology/Impression';
 import { Pythagorean } from './numerology/Pythagorean';
 import { Motivation } from './numerology/Motivation';
 import { Expression } from './numerology/Expression';
+import { Destiny } from './numerology/Destiny';
+import { Mission } from './numerology/Mission';
 
 @Injectable({
   providedIn: 'root'
@@ -56,13 +58,17 @@ export class AnalysisService {
     var motivation = new Motivation(person, shouldPrintPartials, toTableConversion);
     var impression = new Impression(person, shouldPrintPartials, toTableConversion);
     var expressionValue: number = motivation.calcReduced() + impression.calcReduced();
+    var destiny = new Destiny(person, shouldPrintPartials);
+    var expression = new Expression(expressionValue, shouldPrintPartials, toTableConversion);
 
     return [
-      new PsychicNumber(person, shouldPrintPartials),
-      new PersonalYear(person, shouldPrintPartials),
       motivation,
       impression,
-      new Expression(expressionValue, shouldPrintPartials, toTableConversion)
+      expression,
+      destiny,
+      new Mission(destiny.calcReduced() + expression.calcReduced(), shouldPrintPartials),
+      new PsychicNumber(person, shouldPrintPartials),
+      new PersonalYear(person, shouldPrintPartials),
     ];
   }
 

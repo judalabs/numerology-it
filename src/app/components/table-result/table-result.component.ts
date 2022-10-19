@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { catchError } from 'rxjs';
 import { Person, defaultPerson } from 'src/app/models/person';
 import { AnalysisService } from 'src/app/services/analysis.service';
@@ -11,8 +11,8 @@ import { Analysis } from '../../models/analysis';
   styleUrls: ['./table-result.component.scss']
 })
 export class TableResultComponent implements OnInit {
-  people: Person[] = [];
-  analysisList: Analysis[] = [];
+  @Input("people") people: Person[] = [];
+  @Input("analysisList") analysisList: Analysis[] = [];
   text = `Quem nasce sob a influência do número 2 possui total equilíbrio, prosperidade e harmonização. É uma pessoa que tem uma natureza de muita intuição, sensibilidade, poder, adaptabilidade, pacificidade e o espírito livre.\n
   São pessoas gentis, sociáveis, que adoram estar cercado dos amigos e dos familiares. São considerados “bonzinhos”.
   Mas aí vai um alerta: cuidado para não virar “capacho”! Não deixe que os outros se aproveitem da sua atitude de querer sempre ajudar.
@@ -37,7 +37,7 @@ export class TableResultComponent implements OnInit {
     })
   }
 
-  addThisPerson(): void {
+/*   addThisPerson(): void {
     var actualPerson = this.personEdit;
     this.analysisService.calcIt(actualPerson, getValue).subscribe({
       next: (results) => {
@@ -49,5 +49,5 @@ export class TableResultComponent implements OnInit {
     });
     this.people.push(actualPerson);
     this.personEdit = defaultPerson(this.initPerson);
-  }
+  } */
 }
