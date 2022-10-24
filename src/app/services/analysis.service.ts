@@ -48,7 +48,8 @@ export class AnalysisService {
   private toCalc(analysis: BaseMath): Result {
     return {
       analysisId: analysis.resultNumber,
-      resultNumber: analysis.calcAndPrintReduced()
+      resultNumber: analysis.calcAndPrintReduced(),
+      description: ''
     };
   }
 

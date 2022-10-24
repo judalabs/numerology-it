@@ -1,6 +1,8 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Analysis } from './models/analysis';
 import { defaultPerson, Person } from './models/person';
+import { Result } from './models/results';
 import { AnalysisService } from './services/analysis.service';
 import { getValue } from './services/numerology/KaballahTable';
 
@@ -19,12 +21,18 @@ export class AppComponent implements OnInit {
   };
   personEdit: Person = defaultPerson(this.initPerson);
 
-  constructor(private analysisService: AnalysisService) {}
+  constructor(private analysisService: AnalysisService, private http: HttpClient) {}
+
+  public getAnalysisDescription(result: Result) {
+      return this.http.get(`./assets/results/pt/${result.resultNumber}`, {responseType: 'text'})
+      .subscribe(res => result.description = res);
+  }
 
   ngOnInit(): void {
     this.analysisService.getAll().subscribe({
       next: (analysisList) => {
         this.analysisList = analysisList;
+        
       },
       error(err) {
         console.log(err);
@@ -36,7 +44,12 @@ export class AppComponent implements OnInit {
     var actualPerson = this.personEdit;
     this.analysisService.calcIt(actualPerson, getValue).subscribe({
       next: (results) => {
-        actualPerson.results = results;
+        const p = Promise.all(results.map(result => {
+          this.getAnalysisDescription(result);
+        }));
+        p.then(_unused => {
+          actualPerson.results = results;
+        });
       },
       error(err) {
         console.log(err);

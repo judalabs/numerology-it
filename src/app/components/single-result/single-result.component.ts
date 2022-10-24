@@ -1,7 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Analysis } from 'src/app/models/analysis';
+import { Component, OnInit } from '@angular/core';
 import { defaultPerson, Person } from 'src/app/models/person';
-import { AnalysisService } from 'src/app/services/analysis.service';
 import { BaseResultComponent } from '../BaseResultComponent';
 
 @Component({

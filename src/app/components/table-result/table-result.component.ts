@@ -1,9 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { catchError } from 'rxjs';
-import { Person, defaultPerson } from 'src/app/models/person';
-import { AnalysisService } from 'src/app/services/analysis.service';
-import { getValue } from 'src/app/services/numerology/KaballahTable';
-import { Analysis } from '../../models/analysis';
+import { Component } from '@angular/core';
 import { BaseResultComponent } from '../BaseResultComponent';
 
 @Component({
