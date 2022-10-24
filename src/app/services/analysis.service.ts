@@ -33,24 +33,7 @@ export class AnalysisService {
     person: Person = defaultPerson(),
     toTableConversion: (a: string) => number): T[] {
 
-    return this.getListOfAnalysis(person, toTableConversion)
-      .map(convertFunction);
-  }
-
-  /* 
-    private getResultOfAnalysis(
-      person: Person = defaultPerson(), 
-      convertFunction: (a: string) => number): Result[] {
-      var listOfAnalysis: BaseMath[] = this.getListOfAnalysis(person, convertFunction);
-      return listOfAnalysis.map(analysis => this.toCalc(analysis));
-    } */
-
-  private toCalc(analysis: BaseMath): Result {
-    return {
-      analysisId: analysis.resultNumber,
-      resultNumber: analysis.calcAndPrintReduced(),
-      description: ''
-    };
+    return this.getListOfAnalysis(person, toTableConversion).map(convertFunction);
   }
 
   private getListOfAnalysis(person: Person, toTableConversion: (a: string) => number): BaseMath[] {
@@ -77,6 +60,14 @@ export class AnalysisService {
     return {
       name: analysis.getNameOf(),
       description: analysis.getDescription()
+    };
+  }
+
+  private toCalc(analysis: BaseMath): Result {
+    return {
+      analysisId: analysis.resultNumber,
+      resultNumber: analysis.calcAndPrintReduced(),
+      description: ''
     };
   }
 }

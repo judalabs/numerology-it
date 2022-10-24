@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
       }
     });
     this.people.push(actualPerson);
-    this.personEdit = defaultPerson(this.initPerson);
+    this.personEdit = defaultPerson();
     this.updateTextMessage();
   }
 
