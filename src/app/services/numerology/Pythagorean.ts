@@ -11,7 +11,7 @@ export class Pythagorean extends BaseMath {
     }
 
     public calc():number {
-        return this.input.split('')
+        return this.input.normalize('NFD').split('')
                 .map(Pythagorean.getValue)
                 .reduce((a,b) => a + b);
 

@@ -14,7 +14,7 @@ export class Motivation extends BaseMath {
     }
 
     public calc(): number {
-        return this.input.split('')
+        return this.input.normalize('NFD').split('')
             .filter(e => this.isVowel(e))
             .map(this.convertIt)
             .reduce((a,b) => a + b, 0);

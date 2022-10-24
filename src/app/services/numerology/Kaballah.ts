@@ -13,7 +13,7 @@ export class Pythagorean extends BaseMath {
     }
 
     public calc(): number {
-        return this.input.split('')
+        return this.input.normalize('NFD').split('')
                 .map(e => getValue(e))
                 .reduce((a,b) => a + b);
 
