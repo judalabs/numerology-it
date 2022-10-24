@@ -12,7 +12,7 @@
         </thead>
         <tr *ngFor="let analysis of analysisList; index as i;">
             <td [attr.data-tooltip]="analysis.description">{{analysis.name}}</td>
-            <td *ngFor="let person of people" [attr.data-tooltip]="text" >{{person.results[i].resultNumber}}</td>
+            <td *ngFor="let person of people" [attr.data-tooltip]="person.results[i].description" >{{person.results[i].resultNumber}}</td>
         </tr>
     </table>
 </div>
