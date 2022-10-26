@@ -36,4 +36,8 @@ export class Destiny extends BaseMath {
         " plano físico. A nossa evolução está destinada por inarredável lei cósmica; porquanto" +
         " tentemos nos retardar, chegará o momento que o avanço será por imposição da lei.";
     }
+
+    public override getNameOf(): String {
+        return "Destino";
+    }
 }

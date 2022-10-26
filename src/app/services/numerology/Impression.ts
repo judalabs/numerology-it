@@ -46,4 +46,8 @@ export class Impression extends BaseMath {
         this.lastIsVowel = false;
         return true;
     }
+
+    public override getNameOf(): String {
+        return "Impressão";
+    }
 }

@@ -44,4 +44,8 @@ export class Expression extends BaseMath {
         this.lastIsVowel = false;
         return true;
     }
+
+    public override getNameOf(): String {
+        return "Expressão";
+    }
 }

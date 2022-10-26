@@ -22,4 +22,8 @@ export class Mission extends BaseMath {
         " vida muito mais complicada, estagnada e difícil, nos trazendo" +
         " ainda mais os efeitos da Lei do Karma.";
     }
+    
+    public override getNameOf(): String {
+        return "Missão";
+    }
 }

@@ -16,6 +16,6 @@ export class PersonalYear extends BaseMath {
     }
 
     public getDescription(): string {
-        return "Abcdef asaseas";
+        return "Ano Pessoal";
     }
 }

@@ -49,4 +49,8 @@ export class Motivation extends BaseMath {
         this.lastIsVowel = this.lastIsVowel && isAccent;
         return this.lastIsVowel;
     }
+
+    public override getNameOf(): String {
+        return "Motivação";
+    }
 }

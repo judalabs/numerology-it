@@ -15,6 +15,6 @@ export class PsychicNumber extends BaseMath {
     }
 
     public getDescription(): string {
-        return "null";
+        return "Número psíquico";
     }
 }

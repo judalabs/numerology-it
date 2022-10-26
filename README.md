@@ -1,4 +1,10 @@
 # NumerologyIt
+Calculates your numerology based on your name and birth date.
+It allows you to choose your table conversion [Pythagorean | Kaballah]
+
+TODO's
+- i18n
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
 
