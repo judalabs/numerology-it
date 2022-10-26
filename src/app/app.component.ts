@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     this.analysisService.getAll().subscribe({
       next: (analysisList) => {
         this.analysisList = analysisList;
-        
+        analysisList.forEach(a => console.log(a.name))
       },
       error(err) {
         console.log(err);
