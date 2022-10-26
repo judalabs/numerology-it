@@ -25,4 +25,8 @@ export class Pythagorean extends BaseMath {
     public getDescription():String {
         return "";
     }
+
+    public override getNameOf(): String {
+        return "Kaballah";
+    }
 }

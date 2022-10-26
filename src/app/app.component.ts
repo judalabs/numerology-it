@@ -4,6 +4,7 @@ import { Analysis } from './models/analysis';
 import { defaultPerson, Person } from './models/person';
 import { Result } from './models/results';
 import { AnalysisService } from './services/analysis.service';
+import { Pythagorean } from './services/numerology/Pythagorean';
 import { getValue } from './services/numerology/KaballahTable';
 
 @Component({
@@ -12,6 +13,17 @@ import { getValue } from './services/numerology/KaballahTable';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
+  conversions = [
+    {
+      "fun": getValue,
+      "value": "Kaballah"
+    },{
+    "fun": Pythagorean.getValue,
+    "value": "Pythagorean"
+  }
+];
+  radioSelected = this.conversions[0];
+
   addText: string = "Add";
   people: Person[] = [];
   analysisList: Analysis[] = [];
@@ -42,7 +54,7 @@ export class AppComponent implements OnInit {
   
   addThisPerson(): void {
     var actualPerson = this.personEdit;
-    this.analysisService.calcIt(actualPerson, getValue).subscribe({
+    this.analysisService.calcIt(actualPerson, this.radioSelected.fun).subscribe({
       next: (results) => {
         const p = Promise.all(results.map(result => {
           this.getAnalysisDescription(result);

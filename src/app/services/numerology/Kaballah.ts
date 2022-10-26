@@ -2,7 +2,7 @@ import { Person } from "src/app/models/person";
 import { BaseMath } from "./BaseMath";
 import { getValue } from "./KaballahTable";
 
-export class Pythagorean extends BaseMath {
+export class Kaballah extends BaseMath {
     
     public resultNumber: number = 3;
     private static MULTIPLE: number = 9;
@@ -21,5 +21,9 @@ export class Pythagorean extends BaseMath {
 
     public getDescription():String {
         return "";
+    }
+
+    public override getNameOf(): String {
+        return "Kaballah";
     }
 }

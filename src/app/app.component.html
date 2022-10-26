@@ -11,10 +11,16 @@
     <input type="text" class="form-control" required minlength="10" #birthdate="ngModel"
         [(ngModel)]="personEdit.birthDate" placeholder="Birth Date" (keydown.enter)="addThisPerson()" 
         [dropSpecialCharacters]="false" [showMaskTyped]="true" mask="d0/M0/0000">
+        <div *ngFor="let conversion of conversions">
+          <label for="{{conversion.value}}">
+            <input id="{{conversion}}" [value]='conversion' type="radio" name="enums" 
+            [(ngModel)]="radioSelected">
+            {{conversion.value}}
+          </label>
+        </div>
 
-    <button [disabled]="name.invalid || birthdate.invalid" (click)="addThisPerson()">{{addText}}</button>
-</div>
-
+        <button [disabled]="name.invalid || birthdate.invalid" (click)="addThisPerson()">{{addText}}</button>
+      </div>
   <app-table-result
     (deleteIndex)="deletePersonAt($event)"
     [analysisList]="analysisList" 
