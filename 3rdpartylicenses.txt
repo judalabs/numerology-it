@@ -19,6 +19,9 @@ MIT
 @angular/router
 MIT
 
+@ngx-translate/core
+MIT
+
 ngx-mask
 MIT
 MIT License
