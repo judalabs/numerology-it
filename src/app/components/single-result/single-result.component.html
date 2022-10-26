@@ -1,10 +1,15 @@
-<div class=" deletable">
-    <a style="left: 100px;" (click)="deleteIndex.next(0)"><i class="fa fa-times" aria-hidden="true"></i></a>
+<div class="deletable" style="width: 600px;">
+    <div class="name-date-container">
+        <h4>{{person.name}}</h4>
+        <h4>{{person.birthDate}}</h4>
+    </div>
+
+    <a style="right: 0px;" (click)="deleteIndex.next(0)"><i class="fa fa-times" aria-hidden="true"></i></a>
     <div class="card-container" *ngFor="let result of person.results; index as i;">
-        <p>{{analysisList[i].name}}</p>
-        <p>{{analysisList[i].description}}</p>
-        <br>
-        <p>{{result.resultNumber}}</p>
-        <p>{{result.description}}</p>
+        <details>
+            <summary>{{analysisList[i].name}} - {{result.resultNumber}}</summary>
+            <p>{{analysisList[i].description}}</p>
+            <p class="new-tab">{{result.description}}</p>
+        </details>
     </div>
 </div>

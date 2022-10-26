@@ -1,0 +1,60 @@
+.new-tab {
+    margin-top: 16px;
+}
+
+summary::-webkit-details-marker {
+    display: none; //disabling default triangle
+}
+
+summary {
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+summary:before {
+    content: '';
+    border-width: .4rem;
+    border-style: solid;
+    border-color: transparent transparent transparent #000;
+    position: absolute;
+    top: 0.5rem;
+    left: -1rem;
+    transform: rotate(0);
+    transform-origin: .2rem 50%;
+    transition: .25s transform ease;
+}
+
+details[open]>summary:before {
+    transform: rotate(90deg);
+}
+
+summary {
+    font-size: 20px;
+}
+
+details[open] summary~* {
+    animation: sweep .5s ease-in-out
+}
+
+@keyframes sweep {
+    0% {
+        opacity: 0;
+        size: 0%;
+    }
+
+    100% {
+        opacity: 1;
+        size: 100%;
+    }
+}
+
+.name-date-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    :nth-child(2) {
+        margin-right: 20px;
+    }
+}

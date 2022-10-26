@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TableResultComponent } from './components/table-result/table-result.component';
 import { SingleResultComponent } from './components/single-result/single-result.component';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SingleResultComponent } from './components/single-result/single-result.
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    NgxMaskModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
