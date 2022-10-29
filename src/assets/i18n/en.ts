@@ -1,9 +1,9 @@
 import { TranslationObject } from "./pt";
 
 const TRANSLATIONS: TranslationObject = {
-
-    ANALYSIS: {
-        DESTINY: 'Psychic Number'    
+    "ANALYSIS": {
+        "DESTINY": "GHI"
     }
 }
+
 export default TRANSLATIONS;

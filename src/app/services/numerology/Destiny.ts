@@ -38,6 +38,6 @@ export class Destiny extends BaseMath {
     }
 
     public override getNameOf(): String {
-        return "Destino";
+        return "destiny";
     }
 }

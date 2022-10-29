@@ -1,6 +1,8 @@
 <div class="toolbar" role="banner">
   <span style="margin-left: 16px; font-family: 'Nunito', sans-serif;font-size: 20px"> NumerologyIt </span>
-    <div class="spacer"></div>
+  <div class="spacer"></div>
+  <img src="assets/languages/br.svg" alt="br" width="18px" (click)="changeLang('pt')">
+  <img src="assets/languages/us.svg" alt="us" width="18px" (click)="changeLang('en')">
 </div>
 
 <div class="content" role="main">
@@ -15,11 +17,13 @@
           <label for="{{conversion.value}}">
             <input id="{{conversion}}" [value]='conversion' type="radio" name="enums" 
             [(ngModel)]="radioSelected">
-            {{conversion.value}}
+            {{conversion.value | translate}}
           </label>
         </div>
 
-        <button [disabled]="name.invalid || birthdate.invalid" (click)="addThisPerson()">{{addText}}</button>
+        <button [disabled]="name.invalid || birthdate.invalid" (click)="addThisPerson()">
+          {{(people.length == 0 ? 'general.add' : 'general.addMore') | translate}}
+        </button>
       </div>
   <app-table-result
     (deleteIndex)="deletePersonAt($event)"

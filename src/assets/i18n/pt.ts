@@ -1,8 +1,9 @@
 const TRANSLATIONS = {
-    ANALYSIS: {
-        DESTINY: 'Número Psíquico'
-    }
+    "ANALYSIS": {
+        "DESTINY": "JKL"
+    },
 }
+
 export type TranslationObject = typeof TRANSLATIONS;
 
 export default TRANSLATIONS;

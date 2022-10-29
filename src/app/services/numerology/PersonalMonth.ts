@@ -21,6 +21,6 @@ export class PersonalMonth extends BaseMath {
     }
 
     public override getNameOf(): String {
-        return "Mês Pessoal";
+        return "personalMonth";
     }
 }

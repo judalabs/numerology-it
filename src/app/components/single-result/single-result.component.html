@@ -7,7 +7,7 @@
     <a style="right: 0px;" (click)="deleteIndex.next(0)"><i class="fa fa-times" aria-hidden="true"></i></a>
     <div class="card-container" *ngFor="let result of person.results; index as i;">
         <details>
-            <summary>{{analysisList[i].name}} - {{result.resultNumber}}</summary>
+            <summary>{{analysisList[i].name | translate}} - {{result.resultNumber}}</summary>
             <p>{{analysisList[i].description}}</p>
             <p class="new-tab">{{result.description}}</p>
         </details>

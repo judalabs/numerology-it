@@ -24,6 +24,6 @@ export class Mission extends BaseMath {
     }
     
     public override getNameOf(): String {
-        return "Missão";
+        return "mission";
     }
 }

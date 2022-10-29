@@ -22,6 +22,6 @@ export class PersonalDay extends BaseMath {
     }
 
     public override getNameOf(): String {
-        return "Dia Pessoal";
+        return "personalDay";
     }
 }

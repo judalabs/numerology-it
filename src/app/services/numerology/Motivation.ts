@@ -51,6 +51,6 @@ export class Motivation extends BaseMath {
     }
 
     public override getNameOf(): String {
-        return "Motivação";
+        return "motivation";
     }
 }

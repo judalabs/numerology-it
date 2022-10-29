@@ -13,11 +13,11 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { from, pluck } from 'rxjs';
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return new TranslateHttpLoader(http);
+  return new TranslateHttpLoader(http, 'assets/i18n/', '.ts');
 }
 export class WebpackTranslateLoader implements TranslateLoader {
   getTranslation(lang: string) {
-    return from(import(`../assets/i18n/${lang}.ts`)).pipe(pluck('default'));
+    return from(import(`../assets/i18n/${lang}.json`)).pipe(pluck('default'));
   }
 }
 
@@ -33,7 +33,10 @@ export class WebpackTranslateLoader implements TranslateLoader {
     FormsModule,
     NgxMaskModule.forRoot(),
     TranslateModule.forRoot({
-      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useClass: WebpackTranslateLoader,
+      },
 
     })
   ],

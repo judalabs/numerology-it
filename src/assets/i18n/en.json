@@ -1,5 +1,20 @@
 {
     "ANALYSIS": {
         "DESTINY": "DEF"
-    }
+    },
+    "general": {
+        "add": "Add",
+        "addMore": "Add to compare"
+    },
+    "Pythagorean": "Pythagorean",
+    "Kaballah": "Kaballah",
+    "motivation": "Motivation",
+    "impression": "Impression",
+    "expression": "Expression",
+    "destiny": "Destiny",
+    "mission": "Mission",
+    "psychicNumber": "Psychic Number",
+    "personalYear": "Personal Year",
+    "personalMonth": "Personal Month",
+    "personalDay": "Personal Day"
 }

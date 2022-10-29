@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import { Analysis } from './models/analysis';
 import { defaultPerson, Person } from './models/person';
 import { Result } from './models/results';
@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
 ];
   radioSelected = this.conversions[0];
 
-  addText: string = "Add";
+  addText: string = this.translate.instant('general.add');
   people: Person[] = [];
   analysisList: Analysis[] = [];
   initPerson = {
@@ -37,10 +37,9 @@ export class AppComponent implements OnInit {
   constructor(
     private analysisService: AnalysisService, 
     private http: HttpClient,
-    public translate: TranslateService) {
-      translate.addLangs(['en', 'pt'])
-      translate.setDefaultLang('en');
-      translate.use('en');
+    private translate: TranslateService) {
+      this.translate.addLangs(['en', 'pt']);
+      this.changeLang('pt');
     }
 
   public getAnalysisDescription(result: Result) {
@@ -49,9 +48,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-/*     console.log(    this.translate.instant("ANALYSIS.DESTINY")); */
-    this.translate.get('ANALYSIS.DESTINY').subscribe((text:string) => {console.log(text)});
-    this.translate.get('analysis.destiny').subscribe((text:string) => {console.log(text)});
+    this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+      console.log(event.lang);
+    });
     this.analysisService.getAll().subscribe({
       next: (analysisList) => {
         this.analysisList = analysisList;
@@ -80,16 +79,16 @@ export class AppComponent implements OnInit {
     });
     this.people.push(actualPerson);
     this.personEdit = defaultPerson();
-    this.updateTextMessage();
-  }
-
-  updateTextMessage() {
-    this.addText = this.people.length ? 'Add to compare' : 'Add';
   }
 
   deletePersonAt(personIndex:number) {
     this.people.splice(personIndex, 1);
-    this.updateTextMessage();
+  }
+
+  changeLang(lang:string) {
+    this.translate.setDefaultLang(lang);
+    this.translate.use(lang);
+    console.log(this.translate.currentLang);
   }
 }
 

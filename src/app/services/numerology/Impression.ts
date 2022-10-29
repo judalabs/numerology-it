@@ -48,6 +48,6 @@ export class Impression extends BaseMath {
     }
 
     public override getNameOf(): String {
-        return "Impressão";
+        return "impression";
     }
 }

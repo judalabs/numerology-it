@@ -46,6 +46,6 @@ export class Expression extends BaseMath {
     }
 
     public override getNameOf(): String {
-        return "Expressão";
+        return "expression";
     }
 }
