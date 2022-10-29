@@ -21,12 +21,7 @@ export class Impression extends BaseMath {
     }
 
     public getDescription(): string {
-        return "O número de Impressão descreve a personalidade em seu aspecto externo, o ego, ou seja, a" +
-        "aparência da personalidade atual. É o número que descreve aquela primeira impressão que" +
-        "a pessoa causa quando é vista por outro. Nem sempre essa primeira impressão é coerente" +
-        "com a atitude interior da pessoa. Essa aparente divergência, no entanto, não reflete" +
-        "distorção da personalidade e sim apenas um engano de quem se deixa levar pelas" +
-        "aparências e não busca conhecer a essência da pessoa.";
+        return "impression.description";
     }
 
     private isConsonant(letter: String): boolean {
@@ -48,6 +43,6 @@ export class Impression extends BaseMath {
     }
 
     public override getNameOf(): String {
-        return "impression";
+        return "impression.name";
     }
 }

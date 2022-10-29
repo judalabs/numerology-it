@@ -65,7 +65,7 @@ export class AnalysisService {
   private toHeader(analysis: BaseMath): Analysis {
     return {
       name: analysis.getNameOf().toString(),
-      description: analysis.getDescription()
+      description: analysis.getDescription().toString()
     };
   }
 

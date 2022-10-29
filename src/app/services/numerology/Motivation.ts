@@ -21,17 +21,7 @@ export class Motivation extends BaseMath {
     }
 
     public getDescription(): string {
-        return "O número de Motivação descreve os motivos e as razões que movem" +
-        " as atitudes do ser humano e o seu modo de proceder. Esse número" +
-        " revela o aspecto interior da personalidade, da alma, que se reflete em" +
-        " suas atitudes e comportamentos, principalmente na intimidade e no lar," +
-        " influenciando ainda nas escolhas pessoais. \n" + 
-        " Nem sempre há coerência, pois, a atitude interior da pessoa muitas" + 
-        " vezes não é revelada para as outras pessoas, mas rege as suas decisões" +
-        " intuitivas. O número de Motivação revela as crenças e os valores " + 
-        " íntimos que norteiam a vida da pessoa mobilizando seus desejos e suas" +
-        " ambições, e os sentimentos mais íntimos que impulsionam o ser humano a" +
-        " buscar determinados caminhos para as suas realizações na vida.";
+        return "motivation.description";
     }
 
     private isVowel(letter: String): boolean {
@@ -51,6 +41,6 @@ export class Motivation extends BaseMath {
     }
 
     public override getNameOf(): String {
-        return "motivation";
+        return "motivation.name";
     }
 }

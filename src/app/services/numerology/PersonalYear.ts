@@ -16,10 +16,10 @@ export class PersonalYear extends BaseMath {
     }
 
     public getDescription(): string {
-        return "Ano Pessoal";
+        return "personalYear.description";
     }
 
     public override getNameOf(): String {
-        return "personalYear";
+        return "personalYear.name";
     }
 }

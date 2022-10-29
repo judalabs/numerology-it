@@ -15,10 +15,10 @@ export class PsychicNumber extends BaseMath {
     }
 
     public getDescription(): string {
-        return "Número psíquico";
+        return "psychicNumber.description";
     }
 
     public override getNameOf(): String {
-        return "psychicNumber";
+        return "psychicNumber.name";
     }
 }

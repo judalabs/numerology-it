@@ -17,10 +17,10 @@ export class PersonalMonth extends BaseMath {
     }
 
     public getDescription(): string {
-        return "Mês Pessoal";
+        return "personalMonth.description";
     }
 
     public override getNameOf(): String {
-        return "personalMonth";
+        return "personalMonth.name";
     }
 }
