@@ -12,6 +12,8 @@ import { Motivation } from './numerology/Motivation';
 import { Expression } from './numerology/Expression';
 import { Destiny } from './numerology/Destiny';
 import { Mission } from './numerology/Mission';
+import { PersonalMonth } from './numerology/PersonalMonth';
+import { PersonalDay } from './numerology/PersonalDay';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +46,8 @@ export class AnalysisService {
     var expressionValue: number = motivation.calcReduced() + impression.calcReduced();
     var destiny = new Destiny(person, shouldPrintPartials);
     var expression = new Expression(expressionValue, shouldPrintPartials, toTableConversion);
-
+    var personalYear = new PersonalYear(person, shouldPrintPartials);
+    var personalMonth = new PersonalMonth(personalYear, shouldPrintPartials);
     return [
       motivation,
       impression,
@@ -52,7 +55,9 @@ export class AnalysisService {
       destiny,
       new Mission(destiny.calcReduced() + expression.calcReduced(), shouldPrintPartials),
       new PsychicNumber(person, shouldPrintPartials),
-      new PersonalYear(person, shouldPrintPartials),
+      personalYear,
+      personalMonth,
+      new PersonalDay(personalMonth, shouldPrintPartials)
     ];
   }
 
