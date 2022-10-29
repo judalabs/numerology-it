@@ -1,0 +1,48 @@
+{
+    "ANALYSIS": {
+        "DESTINY": "DEF"
+    },
+    "general": {
+        "add": "Add",
+        "addMore": "Add to compare"
+    },
+    "Pythagorean": "Pythagorean",
+    "Kaballah": "Kaballah",
+    "motivation": {
+        "name": "Motivation",
+        "description": "Your Soul Urge number is just as it sounds: it represents what your heart yearns for most. In fact, some numerologists refer to it as the Heart's Desire number, but there is no difference in its meaning. The Soul Urge is what motivates your ideals, your decisions, and your dreams. While the Personality number is something you show to everybody, the Soul Urge is something closer to your heart that you share only with those who are worthy."
+    },
+    "impression": {
+        "name": "Impression",
+        "description": "As the name suggests, this number generally gives an idea of how the first impression of a person would be on others. This number reveals how the other person would think of the native when they speak to them the very first time. Also, it helps to define how one sees himself as an individual or wishes to represent in front of others. The way a native communicates, behaves, or defines himself in front of a being for the first and foremost time is what the First impression number actually tells."
+    },
+    "expression": {
+        "name": "Expression",
+        "description": "Expression number helps to know about a person’s outer personality. Life Expression number indicates a lot about how a person expresses with the external world and projects himself/herself to others. Numerologists calculate expression number to know about a person’s nature, talents and strengths one is born with and the challenges in an individual’s life."
+    },
+    "destiny": {
+        "name": "Destiny",
+        "description": "Destiny Number is an extremely important element of your numerology chart. This number explores what you are destined to do in your lifetime and who you are destined to become. It points to the strengths you should use and develop to lead a fulfilling life."
+    },
+    "mission": {
+        "name": "Mission",
+        "description": "Your life path number is the most important number in numerology, and it can reveal your soul mission and life purpose"
+    },
+    "psychicNumber": {
+        "name": "Psychic Number",
+        "description": "A Psychic number is also called the Driver number or Mulaank. The psychic number reveals the way a person looks at oneself. It affects what one expects and desires. It tells about your inner-self. How you think, behave and perceive the Universe is majorly defined by your Psychic number."
+    },
+    "personalYear": {
+        "name": "Personal Year",
+        "description": "Personal Year Number, will dictate the ebb and flow of activities within your year. You can use it with, or instead of, the Period of the Year"
+    },
+    "personalMonth": {
+        "name": "Personal Month",
+        "description": "The energy represented by your personal month number attracts types of events and circumstances to you during the month. It is important to know what the personal month influences are, to know what is more likely, to plan a better month."
+    },
+    "personalDay": {
+        "name": "Personal Day",
+        "description": "The personal day number indicates what the tone of the day will be. When the tone is known, the day's tendencies and how you'll be affected can be predicted."
+    }
+    
+}

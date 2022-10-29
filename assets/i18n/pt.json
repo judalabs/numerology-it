@@ -1,0 +1,47 @@
+{
+    "ANALYSIS": {
+        "DESTINY": "ABC"
+    },
+    "general": {
+        "add": "Adicionar",
+        "addMore": "compare"
+    },
+    "Pythagorean": "Pitagórico",
+    "Kaballah": "Cabalístico",
+    "motivation": {
+        "name": "Motivação",
+        "description": "O número de Motivação descreve os motivos e as razões que movem as atitudes do ser humano e o seu modo de proceder. Esse número revela o aspecto interior da personalidade, da alma, que se reflete em suas atitudes e comportamentos, principalmente na intimidade e no lar, influenciando ainda nas escolhas pessoais. Nem sempre há coerência, pois, a atitude interior da pessoa, muitas vezes, não é revelada para os outros, mas rege as suas decisões intuitivas. O número de Motivação revela as crenças e os valores internos da pessoa, mobilizando seus desejos, suas ambições e os sentimentos mais íntimos que o impulsionam a buscar determinados caminhos para as suas realizações na vida. Revela a essência da personalidade."
+    },
+    "impression": {
+        "name": "Impressão",
+        "description": "O número de Impressão descreve a personalidade em seu aspecto externo, o ego, ou seja, a aparência da personalidade atual. É o número que descreve aquela primeira impressão que a pessoa causa quando é vista por outro. Nem sempre essa primeira impressão é coerente com a atitude interior da pessoa. Essa aparente divergência, no entanto, não reflete distorção da personalidade e sim apenas um engano de quem se deixa levar pelas aparências e não busca conhecer a essência da pessoa."
+    },
+    "expression": {
+        "name": "Expressão",
+        "description": "O número de Expressão enuncia a maneira como a pessoa age e interage com os outros e com o mundo, revelando quais são os verdadeiros talentos e aptidões que desenvolverá ao longo da vida, e a melhor forma de expressá-los. Revela o caráter da personalidade, as características que se expressam nas ações pessoais, refletindo-se nos vários campos da vida. A expressão é a própria maneira de agir do ser humano no uso da sua personalidade, motivada pelos seus conteúdos internos, da Alma (a Motivação) e externos, do Ego (a Impressão), resumindo o conjunto completo da sua personalidade. É o número do nome da pessoa."
+    },
+    "destiny": {
+        "name": "Destino",
+        "description": "O número de destino é determinado pela data de nascimento - dia, mês e ano. O destino rege a vida do ser humano e indica o seu \"caminho\" evolutivo. Ele orienta as decisões mais importantes na vida; aquelas que determinam o que resultará das aplicações dos seus dons e talentos nas suas realizações pessoais conforme for a sua vocação. \nO destino é a própria construção da vida que cada um escolhe, ou que lhe é destinado por determinação da existência e pelas suas necessidades evolutivas. Ele representa a energia cíclica com a qual o ser humano se desenvolverá numa determinada etapa da sua existência - uma vida no plano físico. A nossa evolução está destinada por inarredável lei cósmica; porquanto tentemos nos retardar, chegará o momento que o avanço será por imposição da lei."
+    },
+    "mission": {
+        "name": "Missão",
+        "description": "Todos nós temos uma missão e o conhecimento dessas particularidades suavizam a evolução e a nossa experiência de vida. Não conhecer nosso propósito e os aspectos que a ele estão associados podem tornar a vida muito mais complicada, estagnada e difícil, nos trazendo ainda mais os efeitos da Lei do Karma."
+    },
+    "psychicNumber": {
+        "name": "Número Psíquico",
+        "description": "O Número Psíquico revela como são as qualidades psíquicas que influenciam nas escolhas pessoais, como alimento, sexo, amizades, relacionamentos, casamento e profissão, e nas ambições e desejos. Revela como a pessoa se vê interiormente e como lida com as suas forças interiores da personalidade. É, ainda, o número que reflete certos padrões interiores comuns a grupos de pessoas nascidas em determinados dias comuns entre si."
+    },
+    "personalYear": {
+        "name": "Ano Pessoal",
+        "description": "Cada ano universal (de 01 de janeiro a 31 de dezembro) possui características específicas e vibrações peculiares que influenciam a coletividade humana. Mas existem também os anos pessoais que, do mesmo modo, influenciam particularmente a vida de cada ser humano. O Ano Pessoal começa do dia do aniversário e termina na véspera do próximo aniversário, e exerce forte influência sobre a vida da pessoa. Cada Ano Pessoal traz um conjunto de oportunidades e aprendizados específicos; que, sendo seguidas, a vida será mais profícua."
+    },
+    "personalMonth": {
+        "name": "Mês Pessoal",
+        "description": "Assim como existem os anos pessoais, também os meses pessoais influenciam de certa maneira a vida da pessoa. Cada mês do ano tem sua vibração peculiar, e cada ser humano segue, de acordo com a sua data de nascimento, uma sequência mensal pessoal, que pode ser aproveitada para se orientar nas suas decisões pessoais."
+    },
+    "personalDay": {
+        "name": "Dia Pessoal",
+        "description": "Cada dia possui suas peculiaridades e influencia a coletividade humana. Individualmente, pessoa pode se orientar pelo seu dia pessoal. Assim como a Astrologia, a Numerologia Cabalística também serve como um orientador diário."
+    }
+}
