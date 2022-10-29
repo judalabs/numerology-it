@@ -18,7 +18,7 @@ summary:before {
     border-style: solid;
     border-color: transparent transparent transparent #000;
     position: absolute;
-    top: 0.5rem;
+    top: 1.2rem;
     left: -1rem;
     transform: rotate(0);
     transform-origin: .2rem 50%;
@@ -27,14 +27,21 @@ summary:before {
 
 details[open]>summary:before {
     transform: rotate(90deg);
+    
 }
 
 summary {
     font-size: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(85, 0, 170, 0.653);
 }
 
 details[open] summary~* {
-    animation: sweep .5s ease-in-out
+    animation: sweep .5s ease-in-out;
+    padding: 10px;
+    border: 1px solid rgba(85, 0, 170, 0.653);
+    border-radius: 10px;
 }
 
 @keyframes sweep {
