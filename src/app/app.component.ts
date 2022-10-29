@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { Analysis } from './models/analysis';
 import { defaultPerson, Person } from './models/person';
 import { Result } from './models/results';
@@ -33,7 +34,14 @@ export class AppComponent implements OnInit {
   };
   personEdit: Person = defaultPerson(this.initPerson);
 
-  constructor(private analysisService: AnalysisService, private http: HttpClient) {}
+  constructor(
+    private analysisService: AnalysisService, 
+    private http: HttpClient,
+    public translate: TranslateService) {
+      translate.addLangs(['en', 'pt'])
+      translate.setDefaultLang('en');
+      translate.use('en');
+    }
 
   public getAnalysisDescription(result: Result) {
       return this.http.get(`./assets/results/pt/${result.resultNumber}`, {responseType: 'text'})
@@ -41,6 +49,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
+/*     console.log(    this.translate.instant("ANALYSIS.DESTINY")); */
+    this.translate.get('ANALYSIS.DESTINY').subscribe((text:string) => {console.log(text)});
+    this.translate.get('analysis.destiny').subscribe((text:string) => {console.log(text)});
     this.analysisService.getAll().subscribe({
       next: (analysisList) => {
         this.analysisList = analysisList;

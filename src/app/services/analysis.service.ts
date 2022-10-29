@@ -14,13 +14,14 @@ import { Destiny } from './numerology/Destiny';
 import { Mission } from './numerology/Mission';
 import { PersonalMonth } from './numerology/PersonalMonth';
 import { PersonalDay } from './numerology/PersonalDay';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AnalysisService {
 
-  constructor() { }
+  constructor(private translateService :TranslateService) { }
 
   getAll(): Observable<Analysis[]> {
     return of(this.getAndConvert(this.toHeader, defaultPerson(), Pythagorean.getValue));
